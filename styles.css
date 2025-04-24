@@ -89,7 +89,6 @@ header{
     background-repeat: no-repeat;
     background-size: 100% 7px;
     background-position: bottom;
-
 }
 
 h1 {
@@ -100,7 +99,6 @@ h1 {
     padding-left: 4rem;
     align-items: center;
     display: flex;
-
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
@@ -111,20 +109,19 @@ h1::before {
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
 }
 
 h2{
     font-size: 1.5rem;
     font-weight: bold;
     padding: 1rem;
+}
 
+h2, h3{
     opacity: 0;
     transform: translateY(-20px);
     animation: dropIn 0.6s ease-out forwards;
 }
-
-
 @keyframes dropIn {
     to {
       opacity: 1;
@@ -142,13 +139,12 @@ p{
     font-size: 13px;
 }
 
-/* NAVIGATION */
+/* HAMBURGER NAVIGATION */
 
 nav {
     position: relative;
     
 }
-
 nav ul {
     width: 100%;
     margin:0;
@@ -169,7 +165,7 @@ nav li a {
     text-transform:uppercase;
     font-weight:bold;
     text-decoration:none;
-    color: var(--white);
+    color: var(--blue);
     transition: background-color .3s ease-in;
 }
 nav a:hover, nav input:hover {
@@ -237,9 +233,48 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+}
+/* REST OF MAIN STYLES */
+/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
+#innovation {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: grid;
+    gap: 1rem;
+    place-items: center;
+    text-align: center;
+    padding: 0.5rem 2rem;
+    overflow: hidden;
+    color: var(--white);
 
 }
 
+.investment {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+.investment a {
+    padding: 0.75rem 1rem;
+    background-color: var(--blue);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    justify-self: center;
+    width: auto;
+}
+
+.investment a:hover {
+    background-color: var(--red);
+}
+
+/* SERVICES SECTION */
 #services {
     padding: 1rem;
 }
@@ -258,58 +293,16 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 
 .service:hover {
     transform: translateY(-5px);
-  }
-
-
-/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
-.innovation {
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
-    height: 80vh;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 0.5rem, 2rem;
-    overflow: hidden;
-    color: var(--white);
-
 }
 
-.innovation .investment {
-    display: grid;
-    gap: 1rem;
-    max-width: 600px;
-    width: 100%;
-  }
-
-.innovation h2 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--white);
-    text-align: center;
-  }
-
-.innovation a {
-    padding: 0.75rem 1rem;
-    background-color: var(--blue);
-    color: var(--white);
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    justify-self: center;
-    width: auto;
-}
-
-.innovation a:hover{
-    background-color: var(--red);
-}
-
-#results{
+/* RESULTS SECTION */
+#results {
     background-color: var(--blue);
     color: var(--white);
     padding: 1rem;
 }
 
-#results h3{
+#results h3 {
     padding: 1rem;
 }
 
@@ -327,7 +320,7 @@ th, td {
     border: 1px solid var(--charcoal);
 }
 
-#gray-row{
+.gray-row{
     background-color: var(--charcoal);
 }
 
@@ -378,7 +371,7 @@ th, td {
     animation: stepUp 1s ease-in-out forwards;
 }
 
-
+/* CONTACT FORM SECTION */
 #contact{
     background-color: var(--black);
     color: var(--white);
@@ -420,30 +413,137 @@ th, td {
     background-color: var(--red);
 }
 
-
+/* FOOTER STYLES */
 footer{
     text-align: center;
     background-color: var(--black);
     color: var(--white);
 }
 
-
-
 /* MEDIA QUERIES (MEDIUM) */ 
-
-    #results {
-        grid-template-columns: 1fr 1fr;
+@media (min-width: 700px) {
+    body{
+        max-width: 700px;
     }
+
+    nav {
+        background-color: var(--black);
+      }
+    
+    nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+    
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        max-height: none;
+        overflow: visible;
+        position: static;
+      }
+    
+    nav label,
+    nav input {
+        display: none;
+      }
+    
+    nav li a {
+        font-size: 0.9rem;
+      }
+    
+    #services .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    #services h2, #services p{
+        grid-column: 1 / -1 ;
+    }
+
     .results-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         flex-direction: row;
         justify-content: space-between;
+        align-items: start;
     }
-    .results-table {
-        width: 50%;
-    }
-    .bar-chart {
+
+    .results-container table{
+        grid-column: 1;
         width: 50%;
     }
 
+    .results-container h3{
+        grid-row: 1;
+    }
 
+    .bar-chart{
+        grid-row: 4;
+        width: 50%;
+        justify-self: center;
+    }
+}
 /* MEDIA QUERIES (LARGE) */
+@media (min-width: 1000px) {
+    body{
+        max-width: 1000px;
+    }
+
+    #services .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    .results-container table{
+        width: 100%;
+    }
+
+    .bar-chart{
+        width: 100%;
+    }
+
+/* CONTACT FORM */
+    #contact form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+    #name {
+        grid-column: 1;
+    }
+    label[for="email"] {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    #email {
+        grid-column: 2;
+    }
+    #company {
+        grid-column: 1;
+    }
+    label[for="industry"] {
+        grid-row: 3;
+        grid-column: 2;
+    }
+    #industry {
+        grid-column: 2;
+    }
+    #message {
+        grid-column: 1 / 1;
+        width: 100%;
+    }
+    #contact button {
+        grid-column: 2 / 3;
+        align-self: start;
+    }
+    
+
+}
