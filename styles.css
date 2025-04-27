@@ -64,9 +64,6 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
-
-
-
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
 body{
@@ -84,7 +81,6 @@ header{
     align-items: center;
     display: flex;
     justify-content: space-between;
-
     background-image: linear-gradient(to bottom, var(--blue), transparent);
     background-repeat: no-repeat;
     background-size: 100% 7px;
@@ -142,8 +138,7 @@ p{
 /* HAMBURGER NAVIGATION */
 
 nav {
-    position: relative;
-    
+    position: relative;   
 }
 nav ul {
     width: 100%;
@@ -154,6 +149,7 @@ nav ul {
     text-align:center;
     max-height: 0;
 }
+
 nav h2 {
     visibility:hidden;
     height:1px;
@@ -178,7 +174,7 @@ nav label {
     user-select: none;
     float: right;
   }
-  /* BUILDS THE MIDDLE LINE OF THE HAMBURGER */
+/* BUILDS THE MIDDLE LINE OF THE HAMBURGER */
 label span {
     background-color: var(--white);
     display: block;
@@ -186,8 +182,8 @@ label span {
     position: relative;
     transition: background-color .3s ease-out;
     width: 2rem;
-  }
-  /* BUILDS THE TOP AND BOTTOM LINES OF THE HAMBURGER*/
+}
+/* BUILDS THE TOP AND BOTTOM LINES OF THE HAMBURGER*/
 label span:before, label span:after {
     background: var(--white);
     content: '';
@@ -196,16 +192,16 @@ label span:before, label span:after {
     position: absolute;
     transition: all .2s ease-out;
     width: 100%;
-  }
+}
 label span:before {
     top: .75rem;
-  }
+}
 label span:after {
     top: -.75rem;
-  }
+}
 input {
     display:none;
-  }
+}
   /* ADDS HEIGHT THE NAV WHEN IT'S DROPPED DOWN */
 input:checked ~ ul {
     max-height: 500px;
@@ -227,13 +223,13 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     top: 0;
 }
 
-
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 /* REST OF MAIN STYLES */
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 #innovation {
@@ -257,7 +253,7 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
-  }
+}
 
 .investment a {
     padding: 0.75rem 1rem;
@@ -282,7 +278,7 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 .service {
     display: grid;
     gap: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     background-color: var(--blue);
     color: var(--white);
     border-radius: 10px;
@@ -382,27 +378,26 @@ th, td {
     display: block;
     margin-top: 1rem;
     font-size: 13px;
-  }
+}
   
-  #contact input,
-  #contact textarea {
+#contact input,
+#contact textarea {
     display: block;
     width: 100%;
     padding: 0.75rem;
     font-family: inherit;
-    background-color: white;
     border: 2px solid var(--blue);
     box-sizing: border-box;
-  }
+}
   
-  #contact button {
+#contact button {
     display: block;
     width: 100%;
     padding: 1rem;
     font-size: 1rem;
     font-weight: bold;
     background-color: var(--blue);
-    color: white;
+    color: var(--white);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -421,43 +416,36 @@ footer{
 }
 
 /* MEDIA QUERIES (MEDIUM) */ 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
     body{
-        max-width: 700px;
+        max-width: 800px;
+    }
+
+    header{
+        padding: 1.5rem;
     }
 
     nav {
         background-color: var(--black);
-      }
-    
-    nav .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
+    }
     
     nav ul {
         display: flex;
         justify-content: flex-end;
         gap: 1rem;
-        max-height: none;
-        overflow: visible;
-        position: static;
-      }
+        max-height: none;   
+    }
     
     nav label,
     nav input {
         display: none;
-      }
+    }
     
     nav li a {
         font-size: 0.9rem;
-      }
+    }
     
-    #services .container {
+    #services #container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -491,9 +479,9 @@ footer{
     }
 }
 /* MEDIA QUERIES (LARGE) */
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
     body{
-        max-width: 1000px;
+        max-width: 1024px;
     }
 
     #services .container {
@@ -545,5 +533,4 @@ footer{
         align-self: start;
     }
     
-
 }
